@@ -16,6 +16,27 @@ example usage:
 ./rzx2l-loader.py -p /dev/ttyUSB0 -l Flash_Writer_SCIF_VSOM_G2L_1GB_DDR4_1GB_1PCS.mot  --image boot.img
 ```
 
+## dependencies
+
+In order to run this tool, "pySerial" module is needed.
+It can be installed with command:
+```bash
+pip3 install --user pyserial
+````
+
+## flash writer
+
+For proper operation, it is necessary to use flash writer binary compiled from:
+https://github.com/SoMLabs/rzg2_flash_writer
+
+Recommended build option for optimal performance:
+
+```bash
+CROSS_COMPILE=aarch64-none-linux-gnu- make -f makefile.linaro BOARD=VSOM_V2L_1GB SERIAL_FLASH=DISABLE MEM_CMD=DISABLE MEM_TEST_CMD=DISABLE EMMC_DISP=DISABLE
+
+CROSS_COMPILE=aarch64-none-linux-gnu- make -f makefile.linaro BOARD=VSOM_G2L_1GB SERIAL_FLASH=DISABLE MEM_CMD=DISABLE MEM_TEST_CMD=DISABLE EMMC_DISP=DISABLE
+```
+
 
 ## eMMC boot partition format
 
