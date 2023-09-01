@@ -42,13 +42,15 @@ CROSS_COMPILE=aarch64-none-linux-gnu- make -f makefile.linaro BOARD=VSOM_G2L_1GB
 
 Renesas RZ/X2L boot room expects following eMMC boot partition content:
 
-----------------------------
+```
+-----------------------------
 | sectors |     content     |
-----------------------------
+-----------------------------
 |    0    |     unused      |
 |   1..x  |     bl2_bp      |
 | 256..x  |     fip.bin     |
-----------------------------
+-----------------------------
+```
 
 This can be generated i.e. with commands:
 
